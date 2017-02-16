@@ -38,14 +38,14 @@ def linker(term):
     if len(f) == 1:
         url = urls[vec.index(f[0])]
         response = getlatest(url)
-        slack_client.api_call("chat.postMessage", channel=channel,text=response, as_user=True)
+        # slack_client.api_call("chat.postMessage", channel=channel,text=response, as_user=True)
     else:
         s = "Did you mean:\n"
         for w in f:
             s += "<" + urls[vec.index(w)] + "|" + w + ">" + "\n"
         response = s
-        slack_client.api_call("chat.postMessage", channel=channel,text=response, as_user=True)
-
+        # slack_client.api_call("chat.postMessage", channel=channel,text=response, as_user=True)
+    return(response)
 # def getTopics():
 # 	myElements = soup.find("div",{"class":"govspeak"}).findAll("h3", text = True)
 # 	topicArray = []

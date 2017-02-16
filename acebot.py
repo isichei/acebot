@@ -148,6 +148,8 @@ def handle_command(command, channel, ts, user):
     elif "stats" in command:
         cdummy = command.replace("stats","")
         response = linker(cdummy)
+        slack_client.api_call("chat.postMessage", channel=channel,text=response, as_user=True)
+        
     slack_client.api_call("chat.postMessage", channel=channel, text=response, as_user=True)
 
 
